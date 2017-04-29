@@ -1,0 +1,47 @@
+public class Bank {
+	int accountId;
+	String accountHolder;
+	static String bankName = "Bangladesh Bank";
+	int pass = 3356;
+	
+	float amount = 0.0f;
+	float dipositAmount;
+	float withdrawAmount;
+	
+	void insert(int accountId,String accountHolder){
+		this.accountId = accountId;
+		this.accountHolder = accountHolder;
+	}
+	
+	void dipositMoney(float amount){
+		this.amount = this.amount + amount;
+		System.out.println("Your Total Amount Is = "+ amount);
+	}
+	
+	
+	void display(){
+		System.out.println("Account ID : "+accountId);
+		System.out.println("Account Holdername : "+accountHolder);
+		System.out.println("Bank Name : "+bankName);
+	}
+	
+	void withdrowMoney(float withdrawAmount){
+		if(amount < withdrawAmount){
+			System.out.println("You have not enough money to withdraw !!!");
+		}else {
+			amount = amount - withdrawAmount;
+			System.out.println("Withdral money is = "+withdrawAmount);
+			System.out.println("Now total money is = "+amount);
+		}
+		
+	}
+	
+	boolean matchPass(int pass){
+		if(this.pass == pass)
+			return true;
+		else 
+			return false;
+	}
+
+
+}
