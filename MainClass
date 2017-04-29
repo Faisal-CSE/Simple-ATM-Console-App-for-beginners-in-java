@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+		
+		Scanner input = new Scanner(System.in);
+		
+		System.out.print("Please enter your valid password : " );
+		int inputPass = input.nextInt();
+    
+    Bank bank = new Bank();
+		bank.matchPass(inputPass);
+		
+		if(bank.matchPass(inputPass) == true){
+			bank.insert(15563, "Faisal Porag");
+			bank.display();
+			
+			bank.dipositMoney(5000);
+			
+			System.out.print("Please enter your withdrawal amount : " );
+			float amountToReturn = input.nextFloat(); 
+			bank.withdrowMoney(amountToReturn);
+		}
+		else {
+			System.out.println("Incorrect Password " );
+			System.out.print("Thank you for join with us !!!" );
+		}
+		
+		
+		
+
+	}
+
+}
