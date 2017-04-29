@@ -1,15 +1,18 @@
+
 import java.util.Scanner;
 
 public class MainClass {
 
 	public static void main(String[] args) {
 		
+		@SuppressWarnings("resource")
 		Scanner input = new Scanner(System.in);
 		
+		int count = 1;
+		do{
 		System.out.print("Please enter your valid password : " );
 		int inputPass = input.nextInt();
-    
-    Bank bank = new Bank();
+		Bank bank = new Bank();
 		bank.matchPass(inputPass);
 		
 		if(bank.matchPass(inputPass) == true){
@@ -24,12 +27,17 @@ public class MainClass {
 		}
 		else {
 			System.out.println("Incorrect Password " );
-			System.out.print("Thank you for join with us !!!" );
+			System.out.println("Thank you for join with us !!!" );
+			System.out.println("\n");
+			if(count == 3){
+			      System.out.println("Application Exist.");
+			      System.out.println("Please contact with bank administration!!");
+			}
 		}
 		
+		count++;
+	}while(count < 4);
 		
-		
-
 	}
 
 }
