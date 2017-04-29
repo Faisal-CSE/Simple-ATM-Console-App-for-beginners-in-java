@@ -10,10 +10,10 @@ public class MainClass {
 		
 		int count = 1;
 		do{
-		System.out.print("Please enter your valid password : " );
-		int inputPass = input.nextInt();
-		Bank bank = new Bank();
-		bank.matchPass(inputPass);
+		     System.out.print("Please enter your valid password : " );
+		     int inputPass = input.nextInt();
+		     Bank bank = new Bank();
+		     bank.matchPass(inputPass);
 		
 		if(bank.matchPass(inputPass) == true){
 			bank.insert(15563, "Faisal Porag");
